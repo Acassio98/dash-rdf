@@ -99,7 +99,11 @@ export default function Home() {
   }));
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Marca d'água */}
+      <div className="fixed bottom-4 right-4 text-muted-foreground/20 text-sm font-medium pointer-events-none z-0">
+        Acassio Silva
+      </div>
       {/* Header */}
       <header className="border-b border-border bg-white sticky top-0 z-40">
         <div className="container py-4">
@@ -115,7 +119,7 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="container py-8 space-y-8">
+      <main className="container py-8 space-y-8 relative z-10">
         {/* Contract Header */}
         <ContractHeader info={data.contractInfo} />
 
@@ -277,7 +281,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-muted/30 mt-12">
+      <footer className="border-t border-border bg-muted/30 mt-12 relative z-10">
         <div className="container py-6 text-center text-sm text-muted-foreground">
           <p>Dash RDF © 2025 - Dashboard de Leitura de Dados de Contratos</p>
         </div>

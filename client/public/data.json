@@ -4,7 +4,7 @@
     "contractName": "VIVA BARRA PRAIA SPE LTDA",
     "totalBalance": 1881.46,
     "difPrestacao": -1890.29,
-    "pendVrComplem": 0.00,
+    "pendVrComplem": 0.0,
     "lastDailyDate": "11/12/2025",
     "emitter": "2443374"
   },
@@ -19,8 +19,8 @@
           "rtNcpd": "FD 2502",
           "pgFiador": "15/04/2025",
           "pgMutuario": "00/00/0000",
-          "vrPrevisto": 116.40,
-          "vrPagoFiador": 116.40
+          "vrPrevisto": 116.4,
+          "vrPagoFiador": 116.4
         },
         {
           "contractUnd": "87877222888",
@@ -36,8 +36,8 @@
         "vrPrevisto": 243.14,
         "vrPagoFiador": 243.14,
         "vrIncorporado": 243.14,
-        "vrAmortizado": 0.00,
-        "vrEstornado": 0.00
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
       }
     },
     {
@@ -59,8 +59,8 @@
           "rtNcpd": "FD 2503",
           "pgFiador": "15/05/2025",
           "pgMutuario": "00/00/0000",
-          "vrPrevisto": 265.23,
-          "vrPagoFiador": 265.23
+          "vrPrevisto": 266.23,
+          "vrPagoFiador": 266.23
         },
         {
           "contractUnd": "17877033656",
@@ -76,8 +76,8 @@
         "vrPrevisto": 898.96,
         "vrPagoFiador": 898.96,
         "vrIncorporado": 898.96,
-        "vrAmortizado": 0.00,
-        "vrEstornado": 0.00
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
       }
     },
     {
@@ -125,8 +125,8 @@
         "vrPrevisto": 1456.01,
         "vrPagoFiador": 1456.01,
         "vrIncorporado": 1456.01,
-        "vrAmortizado": 0.00,
-        "vrEstornado": 0.00
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
       }
     },
     {
@@ -148,20 +148,20 @@
           "rtNcpd": "FD 2505",
           "pgFiador": "15/07/2025",
           "pgMutuario": "00/00/0000",
-          "vrPrevisto": 391.64,
-          "vrPagoFiador": 391.64
+          "vrPrevisto": 991.04,
+          "vrPagoFiador": 991.04
         },
         {
-          "contractUnd": "87877222888",
-          "name": "JOHNHATTAN FERREIRA DA SILVA",
+          "contractUnd": "87877214688",
+          "name": "NAYARA VIEIRA DE MORAES",
           "rtNcpd": "FD 2505",
           "pgFiador": "15/07/2025",
           "pgMutuario": "00/00/0000",
-          "vrPrevisto": 308.15,
-          "vrPagoFiador": 308.15
+          "vrPrevisto": 308.95,
+          "vrPagoFiador": 308.95
         },
         {
-          "contractUnd": "87877222888",
+          "contractUnd": "87877228885",
           "name": "JOHNHATTAN FERREIRA DA SILVA",
           "rtNcpd": "FD 2505",
           "pgFiador": "15/07/2025",
@@ -180,11 +180,11 @@
         }
       ],
       "totals": {
-        "vrPrevisto": 1999.26,
-        "vrPagoFiador": 1999.26,
-        "vrIncorporado": 1999.26,
-        "vrAmortizado": 0.00,
-        "vrEstornado": 0.00
+        "vrPrevisto": 3072.6,
+        "vrPagoFiador": 3072.6,
+        "vrIncorporado": 3072.6,
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
       }
     },
     {
@@ -210,11 +210,11 @@
           "vrPagoFiador": 352.06
         },
         {
-          "contractUnd": "17877034495",
+          "contractUnd": "17877033495",
           "name": "ALAN OLIVEIRA SILVEIRA",
-          "rtNcpd": "FD 2506",
-          "pgFiador": "18/08/2025",
-          "pgMutuario": "00/00/0000",
+          "rtNcpd": "FD 2507",
+          "pgFiador": "15/08/2025",
+          "pgMutuario": "18/08/2025",
           "vrPrevisto": 517.42,
           "vrPagoFiador": 517.42
         },
@@ -241,8 +241,258 @@
         "vrPrevisto": 2555.62,
         "vrPagoFiador": 2555.62,
         "vrIncorporado": 2555.62,
-        "vrAmortizado": 0.00,
-        "vrEstornado": 0.00
+        "vrAmortizado": 517.42,
+        "vrEstornado": 0.0
+      }
+    },
+    {
+      "blockId": 6,
+      "referenceDate": "16/09/2025",
+      "beneficiaries": [
+        {
+          "contractUnd": "17877031882",
+          "name": "JOAO EVANGELISTA NUNES DA SILVA",
+          "rtNcpd": "FD 2507",
+          "pgFiador": "16/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 1125.39,
+          "vrPagoFiador": 0.0
+        },
+        {
+          "contractUnd": "87877214688",
+          "name": "NAYARA VIEIRA DE MORAES",
+          "rtNcpd": "FD 2507",
+          "pgFiador": "16/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 403.52,
+          "vrPagoFiador": 0.0
+        },
+        {
+          "contractUnd": "17877033656",
+          "name": "IEDO FILGUEIRA LOUREDO",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "16/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 637.96,
+          "vrPagoFiador": 0.0
+        },
+        {
+          "contractUnd": "87877314001",
+          "name": "JEAN WILLIAN BATISTA RAMOS",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "16/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 475.45,
+          "vrPagoFiador": 0.0
+        }
+      ],
+      "totals": {
+        "vrPrevisto": 2642.32,
+        "vrPagoFiador": 0.0,
+        "vrIncorporado": 0.0,
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
+      }
+    },
+    {
+      "blockId": 7,
+      "referenceDate": "25/09/2025",
+      "beneficiaries": [
+        {
+          "contractUnd": "17877031882",
+          "name": "JOAO EVANGELISTA NUNES DA SILVA",
+          "rtNcpd": "FD 2507",
+          "pgFiador": "25/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 1134.31,
+          "vrPagoFiador": 1134.31
+        },
+        {
+          "contractUnd": "87877214688",
+          "name": "NAYARA VIEIRA DE MORAES",
+          "rtNcpd": "FD 2507",
+          "pgFiador": "25/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 406.38,
+          "vrPagoFiador": 406.38
+        },
+        {
+          "contractUnd": "17877033656",
+          "name": "IEDO FILGUEIRA LOUREDO",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "25/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 643.89,
+          "vrPagoFiador": 643.89
+        },
+        {
+          "contractUnd": "87877314001",
+          "name": "JEAN WILLIAN BATISTA RAMOS",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "25/09/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 478.84,
+          "vrPagoFiador": 478.84
+        }
+      ],
+      "totals": {
+        "vrPrevisto": 2663.42,
+        "vrPagoFiador": 2663.42,
+        "vrIncorporado": 2663.42,
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
+      }
+    },
+    {
+      "blockId": 8,
+      "referenceDate": "15/10/2025",
+      "beneficiaries": [
+        {
+          "contractUnd": "17877030685",
+          "name": "EDNILSON MESSIAS CASTRO DOS SANTO",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 275.5,
+          "vrPagoFiador": 275.5
+        },
+        {
+          "contractUnd": "17877031882",
+          "name": "JOAO EVANGELISTA NUNES DA SILVA",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 1183.7,
+          "vrPagoFiador": 1183.7
+        },
+        {
+          "contractUnd": "87877214688",
+          "name": "NAYARA VIEIRA DE MORAES",
+          "rtNcpd": "FD 2508",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 405.76,
+          "vrPagoFiador": 405.76
+        },
+        {
+          "contractUnd": "17877033495",
+          "name": "ALAN OLIVEIRA SILVEIRA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 542.41,
+          "vrPagoFiador": 542.41
+        },
+        {
+          "contractUnd": "17877033656",
+          "name": "IEDO FILGUEIRA LOUREDO",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 747.26,
+          "vrPagoFiador": 747.26
+        },
+        {
+          "contractUnd": "87877314001",
+          "name": "JEAN WILLIAN BATISTA RAMOS",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "15/10/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 482.94,
+          "vrPagoFiador": 482.94
+        }
+      ],
+      "totals": {
+        "vrPrevisto": 3637.57,
+        "vrPagoFiador": 3637.57,
+        "vrIncorporado": 3637.57,
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
+      }
+    },
+    {
+      "blockId": 9,
+      "referenceDate": "17/11/2025",
+      "beneficiaries": [
+        {
+          "contractUnd": "87877241286",
+          "name": "JOSENALDO VICENTE DA SILVA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 527.99,
+          "vrPagoFiador": 0.0
+        },
+        {
+          "contractUnd": "17877031619",
+          "name": "RUI DO AMARAL FLEXA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 614.71,
+          "vrPagoFiador": 614.71
+        },
+        {
+          "contractUnd": "17877031882",
+          "name": "JOAO EVANGELISTA NUNES DA SILVA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 1187.28,
+          "vrPagoFiador": 1187.28
+        },
+        {
+          "contractUnd": "17877032307",
+          "name": "GUSTAVO LUAN DA SILVA OLIVEIRA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 403.96,
+          "vrPagoFiador": 403.96
+        },
+        {
+          "contractUnd": "17877032962",
+          "name": "ALAN LIMA EVANGELISTA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 599.08,
+          "vrPagoFiador": 599.08
+        },
+        {
+          "contractUnd": "87877214688",
+          "name": "NAYARA VIEIRA DE MORAES",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 444.71,
+          "vrPagoFiador": 444.71
+        },
+        {
+          "contractUnd": "87877228885",
+          "name": "JOHNNATTAN FERREIRA DA SILVA",
+          "rtNcpd": "FD 2509",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 500.52,
+          "vrPagoFiador": 500.52
+        },
+        {
+          "contractUnd": "87877314001",
+          "name": "JEAN WILLIAN BATISTA RAMOS",
+          "rtNcpd": "FD 2510",
+          "pgFiador": "17/11/2025",
+          "pgMutuario": "00/00/0000",
+          "vrPrevisto": 572.84,
+          "vrPagoFiador": 572.84
+        }
+      ],
+      "totals": {
+        "vrPrevisto": 4851.09,
+        "vrPagoFiador": 4323.1,
+        "vrIncorporado": 4323.1,
+        "vrAmortizado": 0.0,
+        "vrEstornado": 0.0
       }
     }
   ]
