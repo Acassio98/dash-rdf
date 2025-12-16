@@ -11,6 +11,8 @@ import {
 import ContractHeader from "@/components/ContractHeader";
 import BlockSummary from "@/components/BlockSummary";
 import BeneficiariesTable from "@/components/BeneficiariesTable";
+import { AdvancedFilters, type FilterState } from "@/components/AdvancedFilters";
+import { ExportButton } from "@/components/ExportButton";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from "recharts";
 import { Eye, Upload, Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -48,6 +50,12 @@ interface ContractData {
 }
 
 export default function Home() {
+  const [filters, setFilters] = useState<FilterState>({
+    beneficiaryName: '',
+    minValue: null,
+    maxValue: null,
+    paymentStatus: 'all',
+  });
   const [data, setData] = useState<ContractData | null>(null);
   const [selectedBlock, setSelectedBlock] = useState<number>(0);
   const [viewMode, setViewMode] = useState<"table" | "chart">("table");
@@ -214,6 +222,17 @@ export default function Home() {
           </div>
         </Card>
 
+        {/* Advanced Filters */}
+        <AdvancedFilters
+          onFiltersChange={setFilters}
+          onReset={() => setFilters({
+            beneficiaryName: '',
+            minValue: null,
+            maxValue: null,
+            paymentStatus: 'all',
+          })}
+        />
+
         {/* Block Selection and View Mode */}
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <div className="w-full md:w-64">
@@ -237,7 +256,7 @@ export default function Home() {
             </Select>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button
               variant={viewMode === "table" ? "default" : "outline"}
               onClick={() => setViewMode("table")}
@@ -254,6 +273,11 @@ export default function Home() {
               <Eye className="w-4 h-4" />
               Gráfico
             </Button>
+            <ExportButton
+              data={data}
+              blockId={selectedBlock}
+              referenceDate={currentBlock.referenceDate}
+            />
           </div>
         </div>
 
@@ -263,7 +287,25 @@ export default function Home() {
         {/* Content Area */}
         {viewMode === "table" ? (
           <BeneficiariesTable
-            data={currentBlock.beneficiaries}
+            data={currentBlock.beneficiaries.filter(beneficiary => {
+              // Aplicar filtros
+              if (filters.beneficiaryName && !beneficiary.name.toLowerCase().includes(filters.beneficiaryName.toLowerCase())) {
+                return false;
+              }
+              if (filters.minValue !== null && beneficiary.vrPrevisto < filters.minValue) {
+                return false;
+              }
+              if (filters.maxValue !== null && beneficiary.vrPrevisto > filters.maxValue) {
+                return false;
+              }
+              if (filters.paymentStatus === 'paid' && beneficiary.pgMutuario === '00/00/0000') {
+                return false;
+              }
+              if (filters.paymentStatus === 'unpaid' && beneficiary.pgMutuario !== '00/00/0000') {
+                return false;
+              }
+              return true;
+            })}
             blockDate={currentBlock.referenceDate}
           />
         ) : (
