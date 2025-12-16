@@ -12,7 +12,8 @@ import ContractHeader from "@/components/ContractHeader";
 import BlockSummary from "@/components/BlockSummary";
 import BeneficiariesTable from "@/components/BeneficiariesTable";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from "recharts";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, Upload, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 interface ContractData {
   contractInfo: {
@@ -50,7 +51,8 @@ export default function Home() {
   const [data, setData] = useState<ContractData | null>(null);
   const [selectedBlock, setSelectedBlock] = useState<number>(0);
   const [viewMode, setViewMode] = useState<"table" | "chart">("table");
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -58,17 +60,60 @@ export default function Home() {
         const response = await fetch("/data.json");
         const jsonData = await response.json();
         setData(jsonData);
-        setLoading(false);
+        setIsLoading(false);
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
     loadData();
   }, []);
 
-  if (loading) {
+  const handlePdfUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.name.toLowerCase().endsWith('.pdf')) {
+      toast.error("Por favor, selecione um arquivo PDF válido");
+      return;
+    }
+
+    setUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/pdf/extract', {
+        method: 'POST',
+        body: formData,
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao processar PDF');
+      }
+
+      const result = await response.json();
+      
+      if (result.success && result.data) {
+        setData(result.data);
+        setSelectedBlock(0);
+        toast.success("PDF carregado com sucesso!");
+      } else {
+        throw new Error(result.error || 'Erro ao processar PDF');
+      }
+    } catch (error) {
+      console.error("Erro ao fazer upload:", error);
+      toast.error("Erro ao processar o PDF. Verifique se está no formato correto.");
+    } finally {
+      setUploading(false);
+      // Reset input
+      event.target.value = '';
+    }
+  };
+
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -122,6 +167,52 @@ export default function Home() {
       <main className="container py-8 space-y-8 relative z-10">
         {/* Contract Header */}
         <ContractHeader info={data.contractInfo} />
+
+        {/* Upload PDF Section */}
+        <Card className="p-6 bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-dashed border-purple-300">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Carregar Novo PDF
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Selecione um arquivo PDF do mesmo modelo para extrair e visualizar os dados automaticamente.
+              </p>
+              <label className="inline-block">
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={handlePdfUpload}
+                  disabled={uploading}
+                  className="hidden"
+                  id="pdf-upload"
+                />
+                <Button
+                  asChild
+                  disabled={uploading}
+                  className="cursor-pointer"
+                >
+                  <label htmlFor="pdf-upload" className="cursor-pointer">
+                    {uploading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Processando...
+                      </>
+                    ) : (
+                      <>
+                        <Upload className="w-4 h-4 mr-2" />
+                        Selecionar PDF
+                      </>
+                    )}
+                  </label>
+                </Button>
+              </label>
+            </div>
+            <div className="hidden md:block text-purple-300 text-6xl">
+              📄
+            </div>
+          </div>
+        </Card>
 
         {/* Block Selection and View Mode */}
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
