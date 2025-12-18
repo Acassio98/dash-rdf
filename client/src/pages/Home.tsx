@@ -13,6 +13,8 @@ import BlockSummary from "@/components/BlockSummary";
 import BeneficiariesTable from "@/components/BeneficiariesTable";
 import { AdvancedFilters, type FilterState } from "@/components/AdvancedFilters";
 import { ExportButton } from "@/components/ExportButton";
+import { CompetencySearch } from "@/components/CompetencySearch";
+import { FinalSummary } from "@/components/FinalSummary";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from "recharts";
 import { Eye, Upload, Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -235,25 +237,31 @@ export default function Home() {
 
         {/* Block Selection and View Mode */}
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-          <div className="w-full md:w-64">
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Selecionar Período
-            </label>
-            <Select
-              value={selectedBlock.toString()}
-              onValueChange={(value) => setSelectedBlock(parseInt(value))}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Selecione um período" />
-              </SelectTrigger>
-              <SelectContent>
-                {data.blocks.map((block, index) => (
-                  <SelectItem key={index} value={index.toString()}>
-                    {block.referenceDate}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div className="w-full md:w-80 space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">
+                Selecionar Período
+              </label>
+              <Select
+                value={selectedBlock.toString()}
+                onValueChange={(value) => setSelectedBlock(parseInt(value))}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Selecione um período" />
+                </SelectTrigger>
+                <SelectContent>
+                  {data.blocks.map((block, index) => (
+                    <SelectItem key={index} value={index.toString()}>
+                      {block.referenceDate}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <CompetencySearch
+              availableDates={data.blocks.map((b: any) => b.referenceDate)}
+              onSelect={setSelectedBlock}
+            />
           </div>
 
           <div className="flex gap-2 flex-wrap">
@@ -411,6 +419,9 @@ export default function Home() {
             </div>
           </div>
         </Card>
+
+        {/* Final Summary */}
+        <FinalSummary data={data} />
       </main>
 
       {/* Footer */}
